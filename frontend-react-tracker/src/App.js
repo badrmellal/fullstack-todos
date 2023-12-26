@@ -102,7 +102,7 @@ function App() {
             onToggle={toggleReminder}
           />
         ) : (
-          "No Tasks to Show :)"
+          "No Tasks to Show. Add Some !"
         )}
       </div>
     </div>
