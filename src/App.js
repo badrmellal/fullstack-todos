@@ -21,14 +21,14 @@ function App() {
 
   //FETCH TASKS
   const fetchTasks = async () => {
-    const response = await fetch('http://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/tasks');
+    const response = await fetch('https://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/tasks');
     const data = await response.json();
     return data;
   }
   
   //FETCH TASK
   const fetchTask = async (id) => {
-    const response = await fetch(`http://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/tasks/${id}`);
+    const response = await fetch(`https://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/tasks/${id}`);
     const data = await response.json();
 
     return data;
@@ -36,14 +36,14 @@ function App() {
 
   //DELETE TASKS
   const deleteTask = async (id) => {
-    fetch(`http://localhost:8080/api/deletetask/${id}`, {
+    fetch(`https://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/deletetask/${id}`, {
       method: 'DELETE'
     })
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
   const addTask = async (task) => {
-    const response = await fetch('http://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/addtask', {
+    const response = await fetch('https://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/addtask', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
@@ -61,7 +61,7 @@ function App() {
     const taskToToggle = await fetchTask(id);
     const updatedTask = {...taskToToggle, reminder: !taskToToggle.reminder}
 
-    const res = await fetch(`http://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/tasks/${id}`, {
+    const res = await fetch(`https://ec2-51-20-130-122.eu-north-1.compute.amazonaws.com:8080/api/tasks/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json'
