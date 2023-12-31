@@ -39,7 +39,7 @@ const AddTask = ({ onAdd }) => {
             <input type="text" placeholder="Add Day & Time" value={dayAndTime} onChange={(e)=> setDayAndTime(e.target.value)}/>
         </div>
         <div className="form-control form-control-check">
-            <label>Set Reminder</label>
+            <label>Set Urgency</label>
             <input type="checkbox" checked={reminder} value={reminder} onChange={(e)=> setReminder(e.currentTarget.checked)}/>
         </div>
         <input type="submit" value='Save Task' className="btn btn-block"/>
